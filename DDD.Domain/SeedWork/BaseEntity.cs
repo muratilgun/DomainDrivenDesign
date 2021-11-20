@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,13 @@ namespace DDD.Domain.SeedWork
     public abstract class BaseEntity
     {
         public int Id { get; set; }
+
+        private ICollection<INotification> domainEvents;
+        private ICollection<INotification> DomainEvents => domainEvents;
+        public void AddDomainEvents(INotification notification)
+        {
+            domainEvents ??= new List<INotification>();
+            domainEvents.Add(notification);
+        }
     }
 }

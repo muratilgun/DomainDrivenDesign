@@ -1,13 +1,14 @@
-﻿using DDD.Domain.SeedWork;
+﻿using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DDD.Application.Repository
+namespace DDD.Domain.Events
 {
-    public interface IBuyerRepository : IRepository
+    public class OrderStartedDomainEvent : INotification
     {
+
     }
 }

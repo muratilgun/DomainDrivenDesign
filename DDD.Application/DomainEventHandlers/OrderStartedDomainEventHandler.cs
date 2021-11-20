@@ -25,8 +25,9 @@ namespace DDD.Application.DomainEventHandlers
             if (notification.Order.UserName =="")
             {
                 var buyer = new Buyer(notification.UserName);
-                //buyerRepository.Add(buyer);
+                //buyerRepository.Add(buyer); 
             }
+            return Task.CompletedTask;
         }
     }
 }

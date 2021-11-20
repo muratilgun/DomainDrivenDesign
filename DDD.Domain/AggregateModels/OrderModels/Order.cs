@@ -29,7 +29,7 @@ namespace DDD.Domain.AggregateModels.OrderModels
             OrderStatus = orderStatus ?? throw new ArgumentNullException(nameof(orderStatus));
             Address = address ?? throw new ArgumentNullException(nameof(address));
             OrderItems = orderItems ?? throw new ArgumentNullException(nameof(orderItems));
-            AddDomainEvents(new OrderStartedDomainEvent("", "", this));
+            AddDomainEvents(new OrderStartedDomainEvent(userName, this));
 
         }
         public void AddOrderItem(int quantity, decimal price, int productId)
